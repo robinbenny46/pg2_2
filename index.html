@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Professional Summary</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'EB Garamond', serif;
+      background: linear-gradient(-45deg, #e0e0e0, #ffffff, #e0e0e0, #ffffff);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header {
+      background-color: #808080;
+      color: #ffffff;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    section {
+      padding: 1rem;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .experience-header {
+      background-color: #808080;
+      color: #ffffff;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .collapsible {
+      border-bottom: 1px solid #ccc;
+      cursor: pointer;
+      padding: 1rem 0;
+    }
+
+    .collapsible .title {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+    }
+
+    .collapsible .subtitle {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .collapsible .about {
+      font-family: Georgia, serif;
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+
+    .collapsible .details {
+      display: none;
+      margin-top: 0.5rem;
+      font-family: Georgia, serif;
+    }
+
+    .collapsible.active .details {
+      display: block;
+    }
+
+    .collapsible .details ul {
+      list-style-type: square;
+      padding-left: 1.5rem;
+      animation: rotateIn 1s ease-in-out;
+    }
+
+    @keyframes rotateIn {
+      from {transform: rotate(-10deg); opacity: 0;}
+      to {transform: rotate(0deg); opacity: 1;}
+    }
+
+    @media (min-width: 768px) {
+      /* Desktop-specific styles */
+      .collapsible .title,
+      .collapsible .subtitle {
+        justify-content: flex-start;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>Professional Summary</header>
+
+  <section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </section>
+
+  <div class="experience-header">Experience</div>
+
+  <section id="experience">
+    <div class="collapsible active">
+      <div class="title">
+        <span>Regional Business Manager</span>
+        <span style="font-style: italic; font-weight: 600;">October 2023 - November 2024</span>
+      </div>
+      <div class="subtitle">
+        <span style="font-weight: 600;">Beth Lifestyle Pvt Ltd</span>
+        <span style="font-weight: 500;">Kerala & Tamil Nadu</span>
+      </div>
+      <div class="about">About the company</div>
+      <div class="details">
+        <ul>
+          <li>Managed regional operations across two states.</li>
+          <li>Implemented strategic business initiatives.</li>
+          <li>Led a team of 50+ employees.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Repeat similar blocks for other positions -->
+
+    <div class="collapsible">
+      <div class="title">
+        <span>Operations Manager</span>
+        <span style="font-style: italic; font-weight: 600;">December 2020 - August 2021</span>
+      </div>
+      <div class="subtitle">
+        <span style="font-weight: 600;">Sahara - Kerala</span>
+        <span style="font-weight: 500;">Kerala</span>
+      </div>
+      <div class="about">About the company</div>
+      <div class="details">
+        <ul>
+          <li>Oversaw daily operations and logistics.</li>
+          <li>Streamlined supply chain processes.</li>
+          <li>Enhanced customer satisfaction metrics.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Add more collapsible sections as needed -->
+
+  </section>
+
+  <script>
+    const collapsibles = document.querySelectorAll('.collapsible');
+
+    collapsibles.forEach((item) => {
+      item.addEventListener('click', () => {
+        collapsibles.forEach((el) => {
+          if (el !== item) el.classList.remove('active');
+        });
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
